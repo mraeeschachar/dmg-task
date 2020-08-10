@@ -1,3 +1,4 @@
+import random
 import requests
 
 
@@ -41,3 +42,19 @@ def test_akita_image():
         ]
     # Body breed images
     assert response_body["message"] == expected
+
+
+def test_random_breed_selection():
+    """
+    Test a random breed selection
+    """
+    # get breed list
+    breed_list_response = requests.get("https://dog.ceo/api/breeds/list/all")
+    breed_list_json = breed_list_response.json()
+    # select random breed
+    breed_choice = random.choice(list(breed_list_json["message"].keys()))
+    # get random breed response
+    breed_response = requests.get(f"https://dog.ceo/api/breed/{breed_choice}/list")
+    breed_json = breed_response.json()
+    # verify status
+    assert breed_json["status"] == "success"

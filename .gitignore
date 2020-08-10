@@ -3,3 +3,4 @@
 *.pyc
 dmg-task/
 geckodriver.log
+.DS_Store
