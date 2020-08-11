@@ -23,3 +23,10 @@ class HomePage(BasePage):
         selector = self.find_css(element)
         selector.click()
         self.wait_for_ajax()
+
+    def subscribe_with_email(self, email_field, email, button):
+        """
+        Clicks on email field
+        """
+        self.send_keys_to_element(email_field, email)
+        self.find_css(button).click()
