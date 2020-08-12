@@ -66,10 +66,9 @@ class BasePage:
         Get Text of element provided in element
         """
         text = self.find_css(element).text
-        if len(text) == 0:
+        if not text:
             text = element.get_attribute("innerText")
-        if len(text) != 0:
-            text = text.strip()
+        text = text.strip()
         return text
 
     @staticmethod

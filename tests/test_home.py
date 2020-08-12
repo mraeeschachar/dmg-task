@@ -1,6 +1,8 @@
 from constants import (
-    documentation_link, breeds_list_link, about_link, submit_your_dog, vertical_nav, docs_url, breeds_list_url,
-    about_url, submit_your_dog_url, email_input_field, test_email, subscribe_button, subscription_error
+    documentation_link, breeds_list_link, about_link, submit_your_dog,
+    vertical_nav, docs_url, breeds_list_url,
+    about_url, submit_your_dog_url, email_input_field, test_email,
+    subscribe_button, subscription_error
 )
 from pages.home_page import HomePage
 from tests.test_base import TestBase
@@ -37,8 +39,11 @@ class TestHome(TestBase):
         """
         Verifies that already subscribed email displays error
         """
-        self.page.subscribe_with_email(email_input_field, test_email, subscribe_button)
+        self.page.subscribe_with_email(email_input_field, test_email,
+                                       subscribe_button)
         self.page.move_driver_to_tab(1)
+        # This assertion is intentionally like this. If someone runs the test
+        # multiple times second assertion would take over
         self.assertTrue(
             f"{test_email} is already subscribed to list Website" or
             f"Recipient {test_email} has too many recent signup requests" in
