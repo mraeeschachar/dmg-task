@@ -1,4 +1,5 @@
-from constants import (dog_selector, boxer_breed, dog_image, fetch_dog_button, demo_image_src
+from constants import (dog_selector, boxer_breed, dog_image, fetch_dog_button,
+                       demo_image_src
                        )
 from pages.breeds_list_page import BreedsListPage
 from tests.test_base import TestBase

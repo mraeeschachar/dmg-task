@@ -4,6 +4,7 @@ docs_url = 'https://dog.ceo/dog-api/documentation/'
 breeds_list_url = 'https://dog.ceo/dog-api/breeds-list'
 about_url = 'https://dog.ceo/dog-api/about'
 submit_your_dog_url = 'https://github.com/jigsawpieces/dog-api-images#dog-api-images'
+test_email = 'raeesphone@gmail.com'
 
 """Home Page"""
 vertical_nav = '.vertical-nav'
@@ -11,6 +12,9 @@ documentation_link = '.vertical-nav [href="/dog-api/documentation"]'
 breeds_list_link = '.vertical-nav [href="/dog-api/breeds-list"]'
 about_link = '.vertical-nav [href="/dog-api/about"]'
 submit_your_dog = '.vertical-nav [href="https://github.com/jigsawpieces/dog-api-images#dog-api-images"]'
+email_input_field = '#mce-EMAIL'
+subscribe_button = '[name="subscribe"]'
+subscription_error = '.error .errorText'
 
 """Documentation Page"""
 end_point_list = '.endpoints-list'

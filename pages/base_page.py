@@ -1,5 +1,4 @@
 import requests
-from selenium.webdriver import ActionChains
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -47,6 +46,30 @@ class BasePage:
         Find element css list as provided in element
         """
         return self.driver.find_elements_by_css_selector(element_list)
+
+    def send_keys_to_element(self, element, data):
+        """
+        Send keys to element as provided in element and data to be sent
+        """
+        element = self.find_css(element)
+        element.clear()
+        element.send_keys(data)
+
+    def move_driver_to_tab(self, tab_number):
+        """
+        Moves driver to tab as given in num. 0th, 1st, 2nd and so on
+        """
+        self.driver.switch_to.window(self.driver.window_handles[tab_number])
+
+    def get_element_text(self, element):
+        """
+        Get Text of element provided in element
+        """
+        text = self.find_css(element).text
+        if not text:
+            text = element.get_attribute("innerText")
+        text = text.strip()
+        return text
 
     @staticmethod
     def verify_href_link_status_code(element):
